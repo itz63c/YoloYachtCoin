@@ -110,16 +110,16 @@
         <translation>Recibiendo direcciones</translation>
     </message>
     <message>
-        <source>Send coins to a Wsbcoin address</source>
-        <translation>Enviar monedas a una dirección Wsbcoin</translation>
+        <source>Send coins to a YYCcoin address</source>
+        <translation>Enviar monedas a una dirección YYCcoin</translation>
     </message>
     <message>
         <source>Change the passphrase used for wallet encryption</source>
         <translation>Cambie la clave utilizada para el cifrado del monedero</translation>
     </message>
     <message>
-        <source>Wsbcoin</source>
-        <translation>Wsbcoin</translation>
+        <source>YYCcoin</source>
+        <translation>YYCcoin</translation>
     </message>
     <message>
         <source>Wallet</source>

@@ -16,14 +16,14 @@ BEGIN
     BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
-            VALUE "CompanyName",        "Wsbcoin"
-            VALUE "FileDescription",    "wsbcoin-tx (CLI Wsbcoin transaction editor utility)"
+            VALUE "CompanyName",        "YYCcoin"
+            VALUE "FileDescription",    "yyccoin-tx (CLI YYCcoin transaction editor utility)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
-            VALUE "InternalName",       "wsbcoin-tx"
+            VALUE "InternalName",       "yyccoin-tx"
             VALUE "LegalCopyright",     COPYRIGHT_STR
             VALUE "LegalTrademarks1",   "Distributed under the MIT software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php."
-            VALUE "OriginalFilename",   "wsbcoin-tx.exe"
-            VALUE "ProductName",        "wsbcoin-tx"
+            VALUE "OriginalFilename",   "yyccoin-tx.exe"
+            VALUE "ProductName",        "yyccoin-tx"
             VALUE "ProductVersion",     VER_PRODUCTVERSION_STR
         END
     END

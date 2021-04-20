@@ -154,8 +154,8 @@
         <translation>Newid y cyfrinymadrodd a ddefnyddiwyd ar gyfer amgryptio'r waled</translation>
     </message>
     <message>
-        <source>Wsbcoin</source>
-        <translation>Wsbcoin</translation>
+        <source>YYCcoin</source>
+        <translation>YYCcoin</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -640,8 +640,8 @@
         <translation>Opsiynau:</translation>
     </message>
     <message>
-        <source>Wsbcoin Core</source>
-        <translation>Craidd Wsbcoin</translation>
+        <source>YYCcoin Core</source>
+        <translation>Craidd YYCcoin</translation>
     </message>
     <message>
         <source>Information</source>

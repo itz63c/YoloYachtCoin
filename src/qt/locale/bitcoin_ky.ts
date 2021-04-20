@@ -38,8 +38,8 @@
         <translation>Билдирүүнү &amp;текшерүү...</translation>
     </message>
     <message>
-        <source>Wsbcoin</source>
-        <translation>Wsbcoin</translation>
+        <source>YYCcoin</source>
+        <translation>YYCcoin</translation>
     </message>
     <message>
         <source>Wallet</source>

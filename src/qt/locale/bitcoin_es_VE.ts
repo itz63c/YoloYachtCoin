@@ -114,8 +114,8 @@
         <translation>Reindexando bloques en el disco...</translation>
     </message>
     <message>
-        <source>Send coins to a Wsbcoin address</source>
-        <translation>Enviar monedas a una dirección Wsbcoin</translation>
+        <source>Send coins to a YYCcoin address</source>
+        <translation>Enviar monedas a una dirección YYCcoin</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -130,8 +130,8 @@
         <translation>Abre la consola de depuración y diágnostico</translation>
     </message>
     <message>
-        <source>Wsbcoin</source>
-        <translation>Wsbcoin</translation>
+        <source>YYCcoin</source>
+        <translation>YYCcoin</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -158,12 +158,12 @@
         <translation>Encriptar las llaves privadas que pertenecen a tu billetera</translation>
     </message>
     <message>
-        <source>Sign messages with your Wsbcoin addresses to prove you own them</source>
-        <translation>Firma mensajes con tus direcciones Wsbcoin para probar que eres dueño de ellas</translation>
+        <source>Sign messages with your YYCcoin addresses to prove you own them</source>
+        <translation>Firma mensajes con tus direcciones YYCcoin para probar que eres dueño de ellas</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Wsbcoin addresses</source>
-        <translation>Verificar mensajes para asegurar que estaban firmados con direcciones Wsbcoin especificas</translation>
+        <source>Verify messages to ensure they were signed with specified YYCcoin addresses</source>
+        <translation>Verificar mensajes para asegurar que estaban firmados con direcciones YYCcoin especificas</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -608,8 +608,8 @@
         <translation>Correr en segundo plano como daemon y aceptar comandos</translation>
     </message>
     <message>
-        <source>Wsbcoin Core</source>
-        <translation>Wsbcoin Core</translation>
+        <source>YYCcoin Core</source>
+        <translation>YYCcoin Core</translation>
     </message>
     <message>
         <source>Bind to given address and always listen on it. Use [host]:port notation for IPv6</source>

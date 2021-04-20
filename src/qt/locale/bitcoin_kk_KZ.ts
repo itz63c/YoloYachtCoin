@@ -70,7 +70,7 @@
         <translation>Құпия сөзді өзгерту</translation>
     </message>
     <message>
-        <source>Wsbcoin</source>
+        <source>YYCcoin</source>
         <translation>Биткоин</translation>
     </message>
     <message>

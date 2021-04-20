@@ -130,8 +130,8 @@
         <translation>Kõvakettal olevate plokkide reindekseerimine...</translation>
     </message>
     <message>
-        <source>Wsbcoin</source>
-        <translation>Wsbcoin</translation>
+        <source>YYCcoin</source>
+        <translation>YYCcoin</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -760,8 +760,8 @@
         <translation>Valikud:</translation>
     </message>
     <message>
-        <source>Wsbcoin Core</source>
-        <translation>Wsbcoin Core</translation>
+        <source>YYCcoin Core</source>
+        <translation>YYCcoin Core</translation>
     </message>
     <message>
         <source>Information</source>

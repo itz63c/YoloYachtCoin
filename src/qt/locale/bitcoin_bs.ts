@@ -14,8 +14,8 @@
 <context>
     <name>BitcoinGUI</name>
     <message>
-        <source>Wsbcoin</source>
-        <translation>Wsbcoin</translation>
+        <source>YYCcoin</source>
+        <translation>YYCcoin</translation>
     </message>
     </context>
 <context>
@@ -156,8 +156,8 @@
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>Wsbcoin Core</source>
-        <translation>Wsbcoin Jezrga</translation>
+        <source>YYCcoin Core</source>
+        <translation>YYCcoin Jezrga</translation>
     </message>
     </context>
 </TS>

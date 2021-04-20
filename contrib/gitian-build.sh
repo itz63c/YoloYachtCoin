@@ -17,7 +17,7 @@ osx=true
 SIGNER=
 VERSION=
 commit=false
-url=https://github.com/wsbcoin-project/wsbcoin
+url=https://github.com/yyccoin-project/yyccoin
 proc=2
 mem=2000
 lxc=true
@@ -31,7 +31,7 @@ commitFiles=true
 read -d '' usage <<- EOF
 Usage: $scriptName [-c|u|v|b|s|B|o|h|j|m|] signer version
 
-Run this script from the directory containing the wsbcoin, gitian-builder, gitian.sigs.ltc, and wsbcoin-detached-sigs.
+Run this script from the directory containing the yyccoin, gitian-builder, gitian.sigs.ltc, and yyccoin-detached-sigs.
 
 Arguments:
 signer          GPG signer to sign each build assert file
@@ -39,7 +39,7 @@ version		Version number, commit, or branch to build. If building a commit or bra
 
 Options:
 -c|--commit	Indicate that the version argument is for a commit or branch
--u|--url	Specify the URL of the repository. Default is https://github.com/wsbcoin-project/wsbcoin
+-u|--url	Specify the URL of the repository. Default is https://github.com/yyccoin-project/yyccoin
 -v|--verify 	Verify the gitian build
 -b|--build	Do a gitian build
 -s|--sign	Make signed binaries for Windows and Mac OSX
@@ -232,8 +232,8 @@ echo ${COMMIT}
 if [[ $setup = true ]]
 then
     sudo apt-get install ruby apache2 git apt-cacher-ng python-vm-builder qemu-kvm qemu-utils
-    git clone https://github.com/wsbcoin-project/gitian.sigs.ltc.git
-    git clone https://github.com/wsbcoin-project/wsbcoin-detached-sigs.git
+    git clone https://github.com/yyccoin-project/gitian.sigs.ltc.git
+    git clone https://github.com/yyccoin-project/yyccoin-detached-sigs.git
     git clone https://github.com/devrandom/gitian-builder.git
     pushd ./gitian-builder
     if [[ -n "$USE_LXC" ]]
@@ -247,7 +247,7 @@ then
 fi
 
 # Set up build
-pushd ./wsbcoin
+pushd ./yyccoin
 git fetch
 git checkout ${COMMIT}
 popd
@@ -256,7 +256,7 @@ popd
 if [[ $build = true ]]
 then
 	# Make output folder
-	mkdir -p ./wsbcoin-binaries/${VERSION}
+	mkdir -p ./yyccoin-binaries/${VERSION}
 	
 	# Build Dependencies
 	echo ""
@@ -266,7 +266,7 @@ then
 	mkdir -p inputs
 	wget -N -P inputs $osslPatchUrl
 	wget -N -P inputs $osslTarUrl
-	make -C ../wsbcoin/depends download SOURCES_PATH=`pwd`/cache/common
+	make -C ../yyccoin/depends download SOURCES_PATH=`pwd`/cache/common
 
 	# Linux
 	if [[ $linux = true ]]
@@ -274,9 +274,9 @@ then
             echo ""
 	    echo "Compiling ${VERSION} Linux"
 	    echo ""
-	    ./bin/gbuild -j ${proc} -m ${mem} --commit wsbcoin=${COMMIT} --url wsbcoin=${url} ../wsbcoin/contrib/gitian-descriptors/gitian-linux.yml
-	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs.ltc/ ../wsbcoin/contrib/gitian-descriptors/gitian-linux.yml
-	    mv build/out/wsbcoin-*.tar.gz build/out/src/wsbcoin-*.tar.gz ../wsbcoin-binaries/${VERSION}
+	    ./bin/gbuild -j ${proc} -m ${mem} --commit yyccoin=${COMMIT} --url yyccoin=${url} ../yyccoin/contrib/gitian-descriptors/gitian-linux.yml
+	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs.ltc/ ../yyccoin/contrib/gitian-descriptors/gitian-linux.yml
+	    mv build/out/yyccoin-*.tar.gz build/out/src/yyccoin-*.tar.gz ../yyccoin-binaries/${VERSION}
 	fi
 	# Windows
 	if [[ $windows = true ]]
@@ -284,10 +284,10 @@ then
 	    echo ""
 	    echo "Compiling ${VERSION} Windows"
 	    echo ""
-	    ./bin/gbuild -j ${proc} -m ${mem} --commit wsbcoin=${COMMIT} --url wsbcoin=${url} ../wsbcoin/contrib/gitian-descriptors/gitian-win.yml
-	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-win-unsigned --destination ../gitian.sigs.ltc/ ../wsbcoin/contrib/gitian-descriptors/gitian-win.yml
-	    mv build/out/wsbcoin-*-win-unsigned.tar.gz inputs/wsbcoin-win-unsigned.tar.gz
-	    mv build/out/wsbcoin-*.zip build/out/wsbcoin-*.exe ../wsbcoin-binaries/${VERSION}
+	    ./bin/gbuild -j ${proc} -m ${mem} --commit yyccoin=${COMMIT} --url yyccoin=${url} ../yyccoin/contrib/gitian-descriptors/gitian-win.yml
+	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-win-unsigned --destination ../gitian.sigs.ltc/ ../yyccoin/contrib/gitian-descriptors/gitian-win.yml
+	    mv build/out/yyccoin-*-win-unsigned.tar.gz inputs/yyccoin-win-unsigned.tar.gz
+	    mv build/out/yyccoin-*.zip build/out/yyccoin-*.exe ../yyccoin-binaries/${VERSION}
 	fi
 	# Mac OSX
 	if [[ $osx = true ]]
@@ -295,10 +295,10 @@ then
 	    echo ""
 	    echo "Compiling ${VERSION} Mac OSX"
 	    echo ""
-	    ./bin/gbuild -j ${proc} -m ${mem} --commit wsbcoin=${COMMIT} --url wsbcoin=${url} ../wsbcoin/contrib/gitian-descriptors/gitian-osx.yml
-	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs.ltc/ ../wsbcoin/contrib/gitian-descriptors/gitian-osx.yml
-	    mv build/out/wsbcoin-*-osx-unsigned.tar.gz inputs/wsbcoin-osx-unsigned.tar.gz
-	    mv build/out/wsbcoin-*.tar.gz build/out/wsbcoin-*.dmg ../wsbcoin-binaries/${VERSION}
+	    ./bin/gbuild -j ${proc} -m ${mem} --commit yyccoin=${COMMIT} --url yyccoin=${url} ../yyccoin/contrib/gitian-descriptors/gitian-osx.yml
+	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs.ltc/ ../yyccoin/contrib/gitian-descriptors/gitian-osx.yml
+	    mv build/out/yyccoin-*-osx-unsigned.tar.gz inputs/yyccoin-osx-unsigned.tar.gz
+	    mv build/out/yyccoin-*.tar.gz build/out/yyccoin-*.dmg ../yyccoin-binaries/${VERSION}
 	fi
 	popd
 
@@ -325,27 +325,27 @@ then
 	echo ""
 	echo "Verifying v${VERSION} Linux"
 	echo ""
-	./bin/gverify -v -d ../gitian.sigs.ltc/ -r ${VERSION}-linux ../wsbcoin/contrib/gitian-descriptors/gitian-linux.yml
+	./bin/gverify -v -d ../gitian.sigs.ltc/ -r ${VERSION}-linux ../yyccoin/contrib/gitian-descriptors/gitian-linux.yml
 	# Windows
 	echo ""
 	echo "Verifying v${VERSION} Windows"
 	echo ""
-	./bin/gverify -v -d ../gitian.sigs.ltc/ -r ${VERSION}-win-unsigned ../wsbcoin/contrib/gitian-descriptors/gitian-win.yml
+	./bin/gverify -v -d ../gitian.sigs.ltc/ -r ${VERSION}-win-unsigned ../yyccoin/contrib/gitian-descriptors/gitian-win.yml
 	# Mac OSX	
 	echo ""
 	echo "Verifying v${VERSION} Mac OSX"
 	echo ""	
-	./bin/gverify -v -d ../gitian.sigs.ltc/ -r ${VERSION}-osx-unsigned ../wsbcoin/contrib/gitian-descriptors/gitian-osx.yml
+	./bin/gverify -v -d ../gitian.sigs.ltc/ -r ${VERSION}-osx-unsigned ../yyccoin/contrib/gitian-descriptors/gitian-osx.yml
 	# Signed Windows
 	echo ""
 	echo "Verifying v${VERSION} Signed Windows"
 	echo ""
-	./bin/gverify -v -d ../gitian.sigs.ltc/ -r ${VERSION}-osx-signed ../wsbcoin/contrib/gitian-descriptors/gitian-osx-signer.yml
+	./bin/gverify -v -d ../gitian.sigs.ltc/ -r ${VERSION}-osx-signed ../yyccoin/contrib/gitian-descriptors/gitian-osx-signer.yml
 	# Signed Mac OSX
 	echo ""
 	echo "Verifying v${VERSION} Signed Mac OSX"
 	echo ""
-	./bin/gverify -v -d ../gitian.sigs.ltc/ -r ${VERSION}-osx-signed ../wsbcoin/contrib/gitian-descriptors/gitian-osx-signer.yml	
+	./bin/gverify -v -d ../gitian.sigs.ltc/ -r ${VERSION}-osx-signed ../yyccoin/contrib/gitian-descriptors/gitian-osx-signer.yml	
 	popd
 fi
 
@@ -360,10 +360,10 @@ then
 	    echo ""
 	    echo "Signing ${VERSION} Windows"
 	    echo ""
-	    ./bin/gbuild -i --commit signature=${COMMIT} ../wsbcoin/contrib/gitian-descriptors/gitian-win-signer.yml
-	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-win-signed --destination ../gitian.sigs.ltc/ ../wsbcoin/contrib/gitian-descriptors/gitian-win-signer.yml
-	    mv build/out/wsbcoin-*win64-setup.exe ../wsbcoin-binaries/${VERSION}
-	    mv build/out/wsbcoin-*win32-setup.exe ../wsbcoin-binaries/${VERSION}
+	    ./bin/gbuild -i --commit signature=${COMMIT} ../yyccoin/contrib/gitian-descriptors/gitian-win-signer.yml
+	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-win-signed --destination ../gitian.sigs.ltc/ ../yyccoin/contrib/gitian-descriptors/gitian-win-signer.yml
+	    mv build/out/yyccoin-*win64-setup.exe ../yyccoin-binaries/${VERSION}
+	    mv build/out/yyccoin-*win32-setup.exe ../yyccoin-binaries/${VERSION}
 	fi
 	# Sign Mac OSX
 	if [[ $osx = true ]]
@@ -371,9 +371,9 @@ then
 	    echo ""
 	    echo "Signing ${VERSION} Mac OSX"
 	    echo ""
-	    ./bin/gbuild -i --commit signature=${COMMIT} ../wsbcoin/contrib/gitian-descriptors/gitian-osx-signer.yml
-	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-osx-signed --destination ../gitian.sigs.ltc/ ../wsbcoin/contrib/gitian-descriptors/gitian-osx-signer.yml
-	    mv build/out/wsbcoin-osx-signed.dmg ../wsbcoin-binaries/${VERSION}/wsbcoin-${VERSION}-osx.dmg
+	    ./bin/gbuild -i --commit signature=${COMMIT} ../yyccoin/contrib/gitian-descriptors/gitian-osx-signer.yml
+	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-osx-signed --destination ../gitian.sigs.ltc/ ../yyccoin/contrib/gitian-descriptors/gitian-osx-signer.yml
+	    mv build/out/yyccoin-osx-signed.dmg ../yyccoin-binaries/${VERSION}/yyccoin-${VERSION}-osx.dmg
 	fi
 	popd
 

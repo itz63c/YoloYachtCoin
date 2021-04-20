@@ -1,42 +1,42 @@
-Wsbcoin Core integration/staging tree
+YYCcoin Core integration/staging tree
 =====================================
 
-[![Build Status](https://travis-ci.org/wsbcoin-project/wsbcoin.svg?branch=master)](https://travis-ci.org/wsbcoin-project/wsbcoin)
+[![Build Status](https://travis-ci.org/yyccoin-project/yyccoin.svg?branch=master)](https://travis-ci.org/yyccoin-project/yyccoin)
 
-https://wsbcoin.cloud
+https://yyccoin.cloud
 
-What is Wsbcoin?
+What is YYCcoin?
 ----------------
 
-Wsbcoin is an experimental digital currency that enables instant payments to
-anyone, anywhere in the world. Wsbcoin uses peer-to-peer technology to operate
+YYCcoin is an experimental digital currency that enables instant payments to
+anyone, anywhere in the world. YYCcoin uses peer-to-peer technology to operate
 with no central authority: managing transactions and issuing money are carried
-out collectively by the network. Wsbcoin Core is the name of open source
+out collectively by the network. YYCcoin Core is the name of open source
 software which enables the use of this currency.
 
 For more information, as well as an immediately useable, binary version of
-the Wsbcoin Core software, see [https://wsbcoin.cloud](https://wsbcoin.cloud).
+the YYCcoin Core software, see [https://yyccoin.cloud](https://yyccoin.cloud).
 
 License
 -------
 
-Wsbcoin Core is released under the terms of the MIT license. See [COPYING](COPYING) for more
+YYCcoin Core is released under the terms of the MIT license. See [COPYING](COPYING) for more
 information or see https://opensource.org/licenses/MIT.
 
 Development Process
 -------------------
 
 The `master` branch is regularly built and tested, but is not guaranteed to be
-completely stable. [Tags](https://github.com/wsbcoin-project/wsbcoin/tags) are created
-regularly to indicate new official, stable release versions of Wsbcoin Core.
+completely stable. [Tags](https://github.com/yyccoin-project/yyccoin/tags) are created
+regularly to indicate new official, stable release versions of YYCcoin Core.
 
 The contribution workflow is described in [CONTRIBUTING.md](CONTRIBUTING.md).
 
-The developer [mailing list](https://groups.google.com/forum/#!forum/wsbcoin-dev)
+The developer [mailing list](https://groups.google.com/forum/#!forum/yyccoin-dev)
 should be used to discuss complicated or controversial changes before working
 on a patch set.
 
-Developer IRC can be found on Freenode at #wsbcoin-dev.
+Developer IRC can be found on Freenode at #yyccoin-dev.
 
 Testing
 -------
@@ -70,7 +70,7 @@ Translations
 ------------
 
 We only accept translation fixes that are submitted through [Bitcoin Core's Transifex page](https://www.transifex.com/projects/p/bitcoin/).
-Translations are converted to Wsbcoin periodically.
+Translations are converted to YYCcoin periodically.
 
 Translations are periodically pulled from Transifex and merged into the git repository. See the
 [translation process](doc/translation_process.md) for details on how this works.

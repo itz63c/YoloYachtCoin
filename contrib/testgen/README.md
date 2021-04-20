@@ -1,6 +1,6 @@
 ### TestGen ###
 
-Utilities to generate test vectors for the data-driven Wsbcoin tests.
+Utilities to generate test vectors for the data-driven YYCcoin tests.
 
 Usage: 
 

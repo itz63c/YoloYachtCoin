@@ -16,14 +16,14 @@ BEGIN
     BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
-            VALUE "CompanyName",        "Wsbcoin"
-            VALUE "FileDescription",    "wsbcoin-cli (JSON-RPC client for " PACKAGE_NAME ")"
+            VALUE "CompanyName",        "YYCcoin"
+            VALUE "FileDescription",    "yyccoin-cli (JSON-RPC client for " PACKAGE_NAME ")"
             VALUE "FileVersion",        VER_FILEVERSION_STR
-            VALUE "InternalName",       "wsbcoin-cli"
+            VALUE "InternalName",       "yyccoin-cli"
             VALUE "LegalCopyright",     COPYRIGHT_STR
             VALUE "LegalTrademarks1",   "Distributed under the MIT software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php."
-            VALUE "OriginalFilename",   "wsbcoin-cli.exe"
-            VALUE "ProductName",        "wsbcoin-cli"
+            VALUE "OriginalFilename",   "yyccoin-cli.exe"
+            VALUE "ProductName",        "yyccoin-cli"
             VALUE "ProductVersion",     VER_PRODUCTVERSION_STR
         END
     END

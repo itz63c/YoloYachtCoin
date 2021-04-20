@@ -1,13 +1,13 @@
 *.tar.gz
 
 *.exe
-src/wsbcoin
-src/wsbcoind
-src/wsbcoin-cli
-src/wsbcoin-tx
-src/test/test_wsbcoin
-src/test/test_wsbcoin_fuzzy
-src/qt/test/test_wsbcoin-qt
+src/yyccoin
+src/yyccoind
+src/yyccoin-cli
+src/yyccoin-tx
+src/test/test_yyccoin
+src/test/test_yyccoin_fuzzy
+src/qt/test/test_yyccoin-qt
 
 # autoreconf
 Makefile.in
@@ -74,12 +74,12 @@ src/qt/test/moc*.cpp
 # Compilation and Qt preprocessor part
 *.qm
 Makefile
-wsbcoin-qt
-Wsbcoin-Qt.app
+yyccoin-qt
+YYCcoin-Qt.app
 
 # Unit-tests
 Makefile.test
-wsbcoin-qt_test
+yyccoin-qt_test
 
 # Resources cpp
 qrc_*.cpp
@@ -92,7 +92,7 @@ build
 *.gcno
 *.gcda
 /*.info
-test_wsbcoin.coverage/
+test_yyccoin.coverage/
 total.coverage/
 coverage_percent.txt
 

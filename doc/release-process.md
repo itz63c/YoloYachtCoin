@@ -5,7 +5,7 @@ Before every release candidate:
 
 * Update translations (ping wumpus on IRC) see [translation_process.md](https://github.com/bitcoin/bitcoin/blob/master/doc/translation_process.md#synchronising-translations).
 
-* Update manpages, see [gen-manpages.sh](https://github.com/wsbcoin-project/wsbcoin/blob/master/contrib/devtools/README.md#gen-manpagessh).
+* Update manpages, see [gen-manpages.sh](https://github.com/yyccoin-project/yyccoin/blob/master/contrib/devtools/README.md#gen-manpagessh).
 
 Before every minor and major release:
 
@@ -33,12 +33,12 @@ If you're using the automated script (found in [contrib/gitian-build.sh](/contri
 Check out the source code in the following directory hierarchy.
 
     cd /path/to/your/toplevel/build
-    git clone https://github.com/wsbcoin-project/gitian.sigs.ltc.git
-    git clone https://github.com/wsbcoin-project/wsbcoin-detached-sigs.git
+    git clone https://github.com/yyccoin-project/gitian.sigs.ltc.git
+    git clone https://github.com/yyccoin-project/yyccoin-detached-sigs.git
     git clone https://github.com/devrandom/gitian-builder.git
-    git clone https://github.com/wsbcoin-project/wsbcoin.git
+    git clone https://github.com/yyccoin-project/yyccoin.git
 
-### Wsbcoin maintainers/release engineers, suggestion for writing release notes
+### YYCcoin maintainers/release engineers, suggestion for writing release notes
 
 Write release notes. git shortlog helps a lot, for example:
 
@@ -61,7 +61,7 @@ If you're using the automated script (found in [contrib/gitian-build.sh](/contri
 
 Setup Gitian descriptors:
 
-    pushd ./wsbcoin
+    pushd ./yyccoin
     export SIGNER=(your Gitian key, ie bluematt, sipa, etc)
     export VERSION=(new version, e.g. 0.8.0)
     git fetch
@@ -95,7 +95,7 @@ Create the OS X SDK tarball, see the [OS X readme](README_osx.md) for details, a
 By default, Gitian will fetch source files as needed. To cache them ahead of time:
 
     pushd ./gitian-builder
-    make -C ../wsbcoin/depends download SOURCES_PATH=`pwd`/cache/common
+    make -C ../yyccoin/depends download SOURCES_PATH=`pwd`/cache/common
     popd
 
 Only missing files will be fetched, so this is safe to re-run for each build.
@@ -103,50 +103,50 @@ Only missing files will be fetched, so this is safe to re-run for each build.
 NOTE: Offline builds must use the --url flag to ensure Gitian fetches only from local URLs. For example:
 
     pushd ./gitian-builder
-    ./bin/gbuild --url wsbcoin=/path/to/wsbcoin,signature=/path/to/sigs {rest of arguments}
+    ./bin/gbuild --url yyccoin=/path/to/yyccoin,signature=/path/to/sigs {rest of arguments}
     popd
 
 The gbuild invocations below <b>DO NOT DO THIS</b> by default.
 
-### Build and sign Wsbcoin Core for Linux, Windows, and OS X:
+### Build and sign YYCcoin Core for Linux, Windows, and OS X:
 
     pushd ./gitian-builder
-    ./bin/gbuild --num-make 2 --memory 3000 --commit wsbcoin=v${VERSION} ../wsbcoin/contrib/gitian-descriptors/gitian-linux.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs.ltc/ ../wsbcoin/contrib/gitian-descriptors/gitian-linux.yml
-    mv build/out/wsbcoin-*.tar.gz build/out/src/wsbcoin-*.tar.gz ../
+    ./bin/gbuild --num-make 2 --memory 3000 --commit yyccoin=v${VERSION} ../yyccoin/contrib/gitian-descriptors/gitian-linux.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs.ltc/ ../yyccoin/contrib/gitian-descriptors/gitian-linux.yml
+    mv build/out/yyccoin-*.tar.gz build/out/src/yyccoin-*.tar.gz ../
 
-    ./bin/gbuild --num-make 2 --memory 3000 --commit wsbcoin=v${VERSION} ../wsbcoin/contrib/gitian-descriptors/gitian-win.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-win-unsigned --destination ../gitian.sigs.ltc/ ../wsbcoin/contrib/gitian-descriptors/gitian-win.yml
-    mv build/out/wsbcoin-*-win-unsigned.tar.gz inputs/wsbcoin-win-unsigned.tar.gz
-    mv build/out/wsbcoin-*.zip build/out/wsbcoin-*.exe ../
+    ./bin/gbuild --num-make 2 --memory 3000 --commit yyccoin=v${VERSION} ../yyccoin/contrib/gitian-descriptors/gitian-win.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-win-unsigned --destination ../gitian.sigs.ltc/ ../yyccoin/contrib/gitian-descriptors/gitian-win.yml
+    mv build/out/yyccoin-*-win-unsigned.tar.gz inputs/yyccoin-win-unsigned.tar.gz
+    mv build/out/yyccoin-*.zip build/out/yyccoin-*.exe ../
 
-    ./bin/gbuild --num-make 2 --memory 3000 --commit wsbcoin=v${VERSION} ../wsbcoin/contrib/gitian-descriptors/gitian-osx.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs.ltc/ ../wsbcoin/contrib/gitian-descriptors/gitian-osx.yml
-    mv build/out/wsbcoin-*-osx-unsigned.tar.gz inputs/wsbcoin-osx-unsigned.tar.gz
-    mv build/out/wsbcoin-*.tar.gz build/out/wsbcoin-*.dmg ../
+    ./bin/gbuild --num-make 2 --memory 3000 --commit yyccoin=v${VERSION} ../yyccoin/contrib/gitian-descriptors/gitian-osx.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs.ltc/ ../yyccoin/contrib/gitian-descriptors/gitian-osx.yml
+    mv build/out/yyccoin-*-osx-unsigned.tar.gz inputs/yyccoin-osx-unsigned.tar.gz
+    mv build/out/yyccoin-*.tar.gz build/out/yyccoin-*.dmg ../
     popd
 
 Build output expected:
 
-  1. source tarball (`wsbcoin-${VERSION}.tar.gz`)
-  2. linux 32-bit and 64-bit dist tarballs (`wsbcoin-${VERSION}-linux[32|64].tar.gz`)
-  3. windows 32-bit and 64-bit unsigned installers and dist zips (`wsbcoin-${VERSION}-win[32|64]-setup-unsigned.exe`, `wsbcoin-${VERSION}-win[32|64].zip`)
-  4. OS X unsigned installer and dist tarball (`wsbcoin-${VERSION}-osx-unsigned.dmg`, `wsbcoin-${VERSION}-osx64.tar.gz`)
+  1. source tarball (`yyccoin-${VERSION}.tar.gz`)
+  2. linux 32-bit and 64-bit dist tarballs (`yyccoin-${VERSION}-linux[32|64].tar.gz`)
+  3. windows 32-bit and 64-bit unsigned installers and dist zips (`yyccoin-${VERSION}-win[32|64]-setup-unsigned.exe`, `yyccoin-${VERSION}-win[32|64].zip`)
+  4. OS X unsigned installer and dist tarball (`yyccoin-${VERSION}-osx-unsigned.dmg`, `yyccoin-${VERSION}-osx64.tar.gz`)
   5. Gitian signatures (in `gitian.sigs.ltc/${VERSION}-<linux|{win,osx}-unsigned>/(your Gitian key)/`)
 
 ### Verify other gitian builders signatures to your own. (Optional)
 
 Add other gitian builders keys to your gpg keyring, and/or refresh keys.
 
-    gpg --import wsbcoin/contrib/gitian-keys/*.pgp
+    gpg --import yyccoin/contrib/gitian-keys/*.pgp
     gpg --refresh-keys
 
 Verify the signatures
 
     pushd ./gitian-builder
-    ./bin/gverify -v -d ../gitian.sigs.ltc/ -r ${VERSION}-linux ../wsbcoin/contrib/gitian-descriptors/gitian-linux.yml
-    ./bin/gverify -v -d ../gitian.sigs.ltc/ -r ${VERSION}-win-unsigned ../wsbcoin/contrib/gitian-descriptors/gitian-win.yml
-    ./bin/gverify -v -d ../gitian.sigs.ltc/ -r ${VERSION}-osx-unsigned ../wsbcoin/contrib/gitian-descriptors/gitian-osx.yml
+    ./bin/gverify -v -d ../gitian.sigs.ltc/ -r ${VERSION}-linux ../yyccoin/contrib/gitian-descriptors/gitian-linux.yml
+    ./bin/gverify -v -d ../gitian.sigs.ltc/ -r ${VERSION}-win-unsigned ../yyccoin/contrib/gitian-descriptors/gitian-win.yml
+    ./bin/gverify -v -d ../gitian.sigs.ltc/ -r ${VERSION}-osx-unsigned ../yyccoin/contrib/gitian-descriptors/gitian-osx.yml
     popd
 
 ### Next steps:
@@ -167,22 +167,22 @@ Codesigner only: Create Windows/OS X detached signatures:
 
 Codesigner only: Sign the osx binary:
 
-    transfer wsbcoin-osx-unsigned.tar.gz to osx for signing
-    tar xf wsbcoin-osx-unsigned.tar.gz
+    transfer yyccoin-osx-unsigned.tar.gz to osx for signing
+    tar xf yyccoin-osx-unsigned.tar.gz
     ./detached-sig-create.sh -s "Key ID"
     Enter the keychain password and authorize the signature
     Move signature-osx.tar.gz back to the gitian host
 
 Codesigner only: Sign the windows binaries:
 
-    tar xf wsbcoin-win-unsigned.tar.gz
+    tar xf yyccoin-win-unsigned.tar.gz
     ./detached-sig-create.sh -key /path/to/codesign.key
     Enter the passphrase for the key when prompted
     signature-win.tar.gz will be created
 
 Codesigner only: Commit the detached codesign payloads:
 
-    cd ~/wsbcoin-detached-sigs
+    cd ~/yyccoin-detached-sigs
     checkout the appropriate branch for this release series
     rm -rf *
     tar xf signature-osx.tar.gz
@@ -195,25 +195,25 @@ Codesigner only: Commit the detached codesign payloads:
 Non-codesigners: wait for Windows/OS X detached signatures:
 
 - Once the Windows/OS X builds each have 3 matching signatures, they will be signed with their respective release keys.
-- Detached signatures will then be committed to the [wsbcoin-detached-sigs](https://github.com/wsbcoin-project/wsbcoin-detached-sigs) repository, which can be combined with the unsigned apps to create signed binaries.
+- Detached signatures will then be committed to the [yyccoin-detached-sigs](https://github.com/yyccoin-project/yyccoin-detached-sigs) repository, which can be combined with the unsigned apps to create signed binaries.
 
 Create (and optionally verify) the signed OS X binary:
 
     pushd ./gitian-builder
-    ./bin/gbuild -i --commit signature=v${VERSION} ../wsbcoin/contrib/gitian-descriptors/gitian-osx-signer.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-osx-signed --destination ../gitian.sigs.ltc/ ../wsbcoin/contrib/gitian-descriptors/gitian-osx-signer.yml
-    ./bin/gverify -v -d ../gitian.sigs.ltc/ -r ${VERSION}-osx-signed ../wsbcoin/contrib/gitian-descriptors/gitian-osx-signer.yml
-    mv build/out/wsbcoin-osx-signed.dmg ../wsbcoin-${VERSION}-osx.dmg
+    ./bin/gbuild -i --commit signature=v${VERSION} ../yyccoin/contrib/gitian-descriptors/gitian-osx-signer.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-osx-signed --destination ../gitian.sigs.ltc/ ../yyccoin/contrib/gitian-descriptors/gitian-osx-signer.yml
+    ./bin/gverify -v -d ../gitian.sigs.ltc/ -r ${VERSION}-osx-signed ../yyccoin/contrib/gitian-descriptors/gitian-osx-signer.yml
+    mv build/out/yyccoin-osx-signed.dmg ../yyccoin-${VERSION}-osx.dmg
     popd
 
 Create (and optionally verify) the signed Windows binaries:
 
     pushd ./gitian-builder
-    ./bin/gbuild -i --commit signature=v${VERSION} ../wsbcoin/contrib/gitian-descriptors/gitian-win-signer.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-win-signed --destination ../gitian.sigs.ltc/ ../wsbcoin/contrib/gitian-descriptors/gitian-win-signer.yml
-    ./bin/gverify -v -d ../gitian.sigs.ltc/ -r ${VERSION}-win-signed ../wsbcoin/contrib/gitian-descriptors/gitian-win-signer.yml
-    mv build/out/wsbcoin-*win64-setup.exe ../wsbcoin-${VERSION}-win64-setup.exe
-    mv build/out/wsbcoin-*win32-setup.exe ../wsbcoin-${VERSION}-win32-setup.exe
+    ./bin/gbuild -i --commit signature=v${VERSION} ../yyccoin/contrib/gitian-descriptors/gitian-win-signer.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-win-signed --destination ../gitian.sigs.ltc/ ../yyccoin/contrib/gitian-descriptors/gitian-win-signer.yml
+    ./bin/gverify -v -d ../gitian.sigs.ltc/ -r ${VERSION}-win-signed ../yyccoin/contrib/gitian-descriptors/gitian-win-signer.yml
+    mv build/out/yyccoin-*win64-setup.exe ../yyccoin-${VERSION}-win64-setup.exe
+    mv build/out/yyccoin-*win32-setup.exe ../yyccoin-${VERSION}-win32-setup.exe
     popd
 
 Commit your signature for the signed OS X/Windows binaries:
@@ -235,23 +235,23 @@ sha256sum * > SHA256SUMS
 
 The list of files should be:
 ```
-wsbcoin-${VERSION}-aarch64-linux-gnu.tar.gz
-wsbcoin-${VERSION}-arm-linux-gnueabihf.tar.gz
-wsbcoin-${VERSION}-i686-pc-linux-gnu.tar.gz
-wsbcoin-${VERSION}-x86_64-linux-gnu.tar.gz
-wsbcoin-${VERSION}-osx64.tar.gz
-wsbcoin-${VERSION}-osx.dmg
-wsbcoin-${VERSION}.tar.gz
-wsbcoin-${VERSION}-win32-setup.exe
-wsbcoin-${VERSION}-win32.zip
-wsbcoin-${VERSION}-win64-setup.exe
-wsbcoin-${VERSION}-win64.zip
+yyccoin-${VERSION}-aarch64-linux-gnu.tar.gz
+yyccoin-${VERSION}-arm-linux-gnueabihf.tar.gz
+yyccoin-${VERSION}-i686-pc-linux-gnu.tar.gz
+yyccoin-${VERSION}-x86_64-linux-gnu.tar.gz
+yyccoin-${VERSION}-osx64.tar.gz
+yyccoin-${VERSION}-osx.dmg
+yyccoin-${VERSION}.tar.gz
+yyccoin-${VERSION}-win32-setup.exe
+yyccoin-${VERSION}-win32.zip
+yyccoin-${VERSION}-win64-setup.exe
+yyccoin-${VERSION}-win64.zip
 ```
 The `*-debug*` files generated by the gitian build contain debug symbols
 for troubleshooting by developers. It is assumed that anyone that is interested
 in debugging can run gitian to generate the files for themselves. To avoid
 end-user confusion about which file to pick, as well as save storage
-space *do not upload these to the wsbcoin.cloud server, nor put them in the torrent*.
+space *do not upload these to the yyccoin.cloud server, nor put them in the torrent*.
 
 - GPG-sign it, delete the unsigned file:
 ```
@@ -261,24 +261,24 @@ rm SHA256SUMS
 (the digest algorithm is forced to sha256 to avoid confusion of the `Hash:` header that GPG adds with the SHA256 used for the files)
 Note: check that SHA256SUMS itself doesn't end up in SHA256SUMS, which is a spurious/nonsensical entry.
 
-- Upload zips and installers, as well as `SHA256SUMS.asc` from last step, to the wsbcoin.cloud server.
+- Upload zips and installers, as well as `SHA256SUMS.asc` from last step, to the yyccoin.cloud server.
 
 ```
 
-- Update wsbcoin.cloud version
+- Update yyccoin.cloud version
 
 - Announce the release:
 
-  - wsbcoin-dev and wsbcoin-dev mailing list
+  - yyccoin-dev and yyccoin-dev mailing list
 
-  - blog.wsbcoin.cloud blog post
+  - blog.yyccoin.cloud blog post
 
-  - Update title of #wsbcoin and #wsbcoin-dev on Freenode IRC
+  - Update title of #yyccoin and #yyccoin-dev on Freenode IRC
 
-  - Optionally twitter, reddit /r/Wsbcoin, ... but this will usually sort out itself
+  - Optionally twitter, reddit /r/YYCcoin, ... but this will usually sort out itself
 
   - Archive release notes for the new version to `doc/release-notes/` (branch `master` and branch of the release)
 
-  - Create a [new GitHub release](https://github.com/wsbcoin-project/wsbcoin/releases/new) with a link to the archived release notes.
+  - Create a [new GitHub release](https://github.com/yyccoin-project/yyccoin/releases/new) with a link to the archived release notes.
 
   - Celebrate

@@ -87,8 +87,8 @@
 // Application startup time (used for uptime calculation)
 const int64_t nStartupTime = GetTime();
 
-const char * const BITCOIN_CONF_FILENAME = "wsbcoin.conf";
-const char * const BITCOIN_PID_FILENAME = "wsbcoin.pid";
+const char * const BITCOIN_CONF_FILENAME = "yyccoin.conf";
+const char * const BITCOIN_PID_FILENAME = "yyccoin.pid";
 
 ArgsManager gArgs;
 bool fPrintToConsole = false;
@@ -505,7 +505,7 @@ static std::string FormatException(const std::exception* pex, const char* pszThr
     char pszModule[MAX_PATH] = "";
     GetModuleFileNameA(nullptr, pszModule, sizeof(pszModule));
 #else
-    const char* pszModule = "wsbcoin";
+    const char* pszModule = "yyccoin";
 #endif
     if (pex)
         return strprintf(
@@ -530,7 +530,7 @@ fs::path GetDefaultDataDir()
     // Unix: ~/.bitcoin
 #ifdef WIN32
     // Windows
-    return GetSpecialFolderPath(CSIDL_APPDATA) / "Wsbcoin";
+    return GetSpecialFolderPath(CSIDL_APPDATA) / "YYCcoin";
 #else
     fs::path pathRet;
     char* pszHome = getenv("HOME");
@@ -540,10 +540,10 @@ fs::path GetDefaultDataDir()
         pathRet = fs::path(pszHome);
 #ifdef MAC_OSX
     // Mac
-    return pathRet / "Library/Application Support/Wsbcoin";
+    return pathRet / "Library/Application Support/YYCcoin";
 #else
     // Unix
-    return pathRet / ".wsbcoin";
+    return pathRet / ".yyccoin";
 #endif
 #endif
 }

@@ -90,8 +90,8 @@
         <translation>&amp;செய்தியை சரிசெய்...</translation>
     </message>
     <message>
-        <source>Wsbcoin</source>
-        <translation>Wsbcoin</translation>
+        <source>YYCcoin</source>
+        <translation>YYCcoin</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -708,8 +708,8 @@
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>Wsbcoin Core</source>
-        <translation>Wsbcoin மையம்</translation>
+        <source>YYCcoin Core</source>
+        <translation>YYCcoin மையம்</translation>
     </message>
     <message>
         <source>(default: %u)</source>

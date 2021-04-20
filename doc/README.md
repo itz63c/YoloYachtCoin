@@ -1,41 +1,41 @@
-Wsbcoin Core
+YYCcoin Core
 =============
 
 Setup
 ---------------------
-Wsbcoin Core is the original Wsbcoin client and it builds the backbone of the network. It downloads and, by default, stores the entire history of Wsbcoin transactions (which is currently more than 7 GBs); depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more.
+YYCcoin Core is the original YYCcoin client and it builds the backbone of the network. It downloads and, by default, stores the entire history of YYCcoin transactions (which is currently more than 7 GBs); depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more.
 
-To download Wsbcoin Core, visit [yoloyachtclub](https://www.yoloyachtclub.com).
+To download YYCcoin Core, visit [yoloyachtclub](https://www.yoloyachtclub.com).
 
 Running
 ---------------------
-The following are some helpful notes on how to run Wsbcoin on your native platform.
+The following are some helpful notes on how to run YYCcoin on your native platform.
 
 ### Unix
 
 Unpack the files into a directory and run:
 
-- `bin/wsbcoin-qt` (GUI) or
-- `bin/wsbcoind` (headless)
+- `bin/yyccoin-qt` (GUI) or
+- `bin/yyccoind` (headless)
 
 ### Windows
 
-Unpack the files into a directory, and then run wsbcoin-qt.exe.
+Unpack the files into a directory, and then run yyccoin-qt.exe.
 
 ### OS X
 
-Drag Wsbcoin-Core to your applications folder, and then run Wsbcoin-Core.
+Drag YYCcoin-Core to your applications folder, and then run YYCcoin-Core.
 
 ### Need Help?
 
-* See the documentation at the [Wsbcoin Wiki](https://wsbcoin.info/)
+* See the documentation at the [YYCcoin Wiki](https://yyccoin.info/)
 for help and more information.
-* Ask for help on [#wsbcoin](http://webchat.freenode.net?channels=wsbcoin) on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net?channels=wsbcoin).
-* Ask for help on the [WsbcoinTalk](https://wsbcointalk.io/) forums.
+* Ask for help on [#yyccoin](http://webchat.freenode.net?channels=yyccoin) on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net?channels=yyccoin).
+* Ask for help on the [YYCcoinTalk](https://yyccointalk.io/) forums.
 
 Building
 ---------------------
-The following are developer notes on how to build Wsbcoin on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
+The following are developer notes on how to build YYCcoin on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
 
 - [OS X Build Notes](build-osx.md)
 - [Unix Build Notes](build-unix.md)
@@ -45,12 +45,12 @@ The following are developer notes on how to build Wsbcoin on your native platfor
 
 Development
 ---------------------
-The Wsbcoin repo's [root README](/README.md) contains relevant information on the development process and automated testing.
+The YYCcoin repo's [root README](/README.md) contains relevant information on the development process and automated testing.
 
 - [Developer Notes](developer-notes.md)
 - [Release Notes](release-notes.md)
 - [Release Process](release-process.md)
-- [Source Code Documentation (External Link)](https://dev.visucore.com/wsbcoin/doxygen/)
+- [Source Code Documentation (External Link)](https://dev.visucore.com/yyccoin/doxygen/)
 - [Translation Process](translation_process.md)
 - [Translation Strings Policy](translation_strings_policy.md)
 - [Travis CI](travis-ci.md)
@@ -61,8 +61,8 @@ The Wsbcoin repo's [root README](/README.md) contains relevant information on th
 - [Benchmarking](benchmarking.md)
 
 ### Resources
-* Discuss on the [WsbcoinTalk](https://wsbcointalk.io/) forums.
-* Discuss general Wsbcoin development on #wsbcoin-dev on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net/?channels=wsbcoin-dev).
+* Discuss on the [YYCcoinTalk](https://yyccointalk.io/) forums.
+* Discuss general YYCcoin development on #yyccoin-dev on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net/?channels=yyccoin-dev).
 
 ### Miscellaneous
 - [Assets Attribution](assets-attribution.md)

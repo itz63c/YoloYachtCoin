@@ -54,10 +54,10 @@ static int AppInitRawTx(int argc, char* argv[])
     if (argc<2 || gArgs.IsArgSet("-?") || gArgs.IsArgSet("-h") || gArgs.IsArgSet("-help"))
     {
         // First part of help message is specific to this utility
-        std::string strUsage = strprintf(_("%s wsbcoin-tx utility version"), _(PACKAGE_NAME)) + " " + FormatFullVersion() + "\n\n" +
+        std::string strUsage = strprintf(_("%s yyccoin-tx utility version"), _(PACKAGE_NAME)) + " " + FormatFullVersion() + "\n\n" +
             _("Usage:") + "\n" +
-              "  wsbcoin-tx [options] <hex-tx> [commands]  " + _("Update hex-encoded wsbcoin transaction") + "\n" +
-              "  wsbcoin-tx [options] -create [commands]   " + _("Create hex-encoded wsbcoin transaction") + "\n" +
+              "  yyccoin-tx [options] <hex-tx> [commands]  " + _("Update hex-encoded yyccoin transaction") + "\n" +
+              "  yyccoin-tx [options] -create [commands]   " + _("Create hex-encoded yyccoin transaction") + "\n" +
               "\n";
 
         fprintf(stdout, "%s", strUsage.c_str());

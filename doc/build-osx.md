@@ -28,17 +28,17 @@ If you want to build with ZeroMQ support
 
 NOTE: Building with Qt4 is still supported, however, could result in a broken UI. Building with Qt5 is recommended.
 
-Build Wsbcoin Core
+Build YYCcoin Core
 ------------------------
 
-1. Clone the wsbcoin source code and cd into `wsbcoin`
+1. Clone the yyccoin source code and cd into `yyccoin`
 
-        git clone https://github.com/wsbcoin-project/wsbcoin
-        cd wsbcoin
+        git clone https://github.com/yyccoin-project/yyccoin
+        cd yyccoin
 
-2.  Build wsbcoin-core:
+2.  Build yyccoin-core:
 
-    Configure and build the headless wsbcoin binaries as well as the GUI (if Qt is found).
+    Configure and build the headless yyccoin binaries as well as the GUI (if Qt is found).
 
     You can disable the GUI build by passing `--without-gui` to configure.
 
@@ -57,37 +57,37 @@ Build Wsbcoin Core
 Running
 -------
 
-Wsbcoin Core is now available at `./src/wsbcoind`
+YYCcoin Core is now available at `./src/yyccoind`
 
 Before running, it's recommended you create an RPC configuration file.
 
-    echo -e "rpcuser=wsbcoinrpc\nrpcpassword=$(xxd -l 16 -p /dev/urandom)" > "/Users/${USER}/Library/Application Support/Wsbcoin/wsbcoin.conf"
+    echo -e "rpcuser=yyccoinrpc\nrpcpassword=$(xxd -l 16 -p /dev/urandom)" > "/Users/${USER}/Library/Application Support/YYCcoin/yyccoin.conf"
 
-    chmod 600 "/Users/${USER}/Library/Application Support/Wsbcoin/wsbcoin.conf"
+    chmod 600 "/Users/${USER}/Library/Application Support/YYCcoin/yyccoin.conf"
 
-The first time you run wsbcoind, it will start downloading the blockchain. This process could take several hours.
+The first time you run yyccoind, it will start downloading the blockchain. This process could take several hours.
 
 You can monitor the download process by looking at the debug.log file:
 
-    tail -f $HOME/Library/Application\ Support/Wsbcoin/debug.log
+    tail -f $HOME/Library/Application\ Support/YYCcoin/debug.log
 
 Other commands:
 -------
 
-    ./src/wsbcoind -daemon # Starts the wsbcoin daemon.
-    ./src/wsbcoin-cli --help # Outputs a list of command-line options.
-    ./src/wsbcoin-cli help # Outputs a list of RPC commands when the daemon is running.
+    ./src/yyccoind -daemon # Starts the yyccoin daemon.
+    ./src/yyccoin-cli --help # Outputs a list of command-line options.
+    ./src/yyccoin-cli help # Outputs a list of RPC commands when the daemon is running.
 
 Using Qt Creator as IDE
 ------------------------
-You can use Qt Creator as an IDE, for wsbcoin development.
+You can use Qt Creator as an IDE, for yyccoin development.
 Download and install the community edition of [Qt Creator](https://www.qt.io/download/).
 Uncheck everything except Qt Creator during the installation process.
 
 1. Make sure you installed everything through Homebrew mentioned above
 2. Do a proper ./configure --enable-debug
 3. In Qt Creator do "New Project" -> Import Project -> Import Existing Project
-4. Enter "wsbcoin-qt" as project name, enter src/qt as location
+4. Enter "yyccoin-qt" as project name, enter src/qt as location
 5. Leave the file selection as it is
 6. Confirm the "summary page"
 7. In the "Projects" tab select "Manage Kits..."

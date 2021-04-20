@@ -186,8 +186,8 @@
         <translation>Đánh chỉ số (indexing) lại các khối (blocks) trên ổ đĩa ...</translation>
     </message>
     <message>
-        <source>Send coins to a Wsbcoin address</source>
-        <translation>Gửi coins đến tài khoản Wsbcoin</translation>
+        <source>Send coins to a YYCcoin address</source>
+        <translation>Gửi coins đến tài khoản YYCcoin</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -206,8 +206,8 @@
         <translation>&amp;Tin nhắn xác thực</translation>
     </message>
     <message>
-        <source>Wsbcoin</source>
-        <translation>Wsbcoin</translation>
+        <source>YYCcoin</source>
+        <translation>YYCcoin</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -234,12 +234,12 @@
         <translation>Mã hoá các khoá bí mật trong Ví của bạn.</translation>
     </message>
     <message>
-        <source>Sign messages with your Wsbcoin addresses to prove you own them</source>
-        <translation>Dùng địa chỉ Wsbcoin của bạn ký các tin nhắn để xác minh những nội dung tin nhắn đó là của bạn.</translation>
+        <source>Sign messages with your YYCcoin addresses to prove you own them</source>
+        <translation>Dùng địa chỉ YYCcoin của bạn ký các tin nhắn để xác minh những nội dung tin nhắn đó là của bạn.</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Wsbcoin addresses</source>
-        <translation>Kiểm tra các tin nhắn để chắc chắn rằng chúng được ký bằng các địa chỉ Wsbcoin xác định.</translation>
+        <source>Verify messages to ensure they were signed with specified YYCcoin addresses</source>
+        <translation>Kiểm tra các tin nhắn để chắc chắn rằng chúng được ký bằng các địa chỉ YYCcoin xác định.</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -258,8 +258,8 @@
         <translation>Thanh công cụ (toolbar)</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and wsbcoin: URIs)</source>
-        <translation>Yêu cầu thanh toán(tạo mã QR và địa chỉ Wsbcoin: URLs)</translation>
+        <source>Request payments (generates QR codes and yyccoin: URIs)</source>
+        <translation>Yêu cầu thanh toán(tạo mã QR và địa chỉ YYCcoin: URLs)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -270,8 +270,8 @@
         <translation>Hiện thỉ danh sách các địa chỉ và nhãn đã dùng để nhận.</translation>
     </message>
     <message>
-        <source>Open a wsbcoin: URI or payment request</source>
-        <translation>Mở wsbcoin:URL hoặc yêu cầu thanh toán</translation>
+        <source>Open a yyccoin: URI or payment request</source>
+        <translation>Mở yyccoin:URL hoặc yêu cầu thanh toán</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -536,8 +536,8 @@
         <translation>Ví</translation>
     </message>
     <message>
-        <source>Connect to the Wsbcoin network through a SOCKS5 proxy.</source>
-        <translation>Kết nối đến máy chủ Wsbcoin thông qua SOCKS5 proxy.</translation>
+        <source>Connect to the YYCcoin network through a SOCKS5 proxy.</source>
+        <translation>Kết nối đến máy chủ YYCcoin thông qua SOCKS5 proxy.</translation>
     </message>
     <message>
         <source>Proxy &amp;IP:</source>
@@ -1018,8 +1018,8 @@
         <translation>Lựa chọn:</translation>
     </message>
     <message>
-        <source>Wsbcoin Core</source>
-        <translation>Wsbcoin Core</translation>
+        <source>YYCcoin Core</source>
+        <translation>YYCcoin Core</translation>
     </message>
     <message>
         <source>(default: %u)</source>
