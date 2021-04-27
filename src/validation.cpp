@@ -1045,50 +1045,32 @@ CAmount GetBlockSubsidy(int nHeight, const Consensus::Params& consensusParams)
     if (halvings >= 64)
         return 0;
 
-    CAmount nSubsidy = 10000 * COIN;
+    CAmount nSubsidy = 1000000 * COIN;
 
-    if (nHeight == 1)
+    if (nHeight == 1) {
         nSubsidy = 10000000000 * COIN;
+        return nSubsidy;
+    }
 
-    if (nHeight >= 2 && nHeight <= 12999)
-        nSubsidy = 1000000 * COIN;
-
-    if (nHeight == 13000)
+    if (nHeight == 13000) {
         nSubsidy = 1 * COIN;
+        return nSubsidy;
+    }
 
-    if (nHeight >= 13001 && nHeight <= 68999)
-        nSubsidy = 1000000 * COIN;
+    if (nHeight == 69000) {
+        nSubsidy = 69696969 * COIN;
+        return nSubsidy;
+    }
 
-    if (nHeight == 69000)
-        nSubsidy = 69000000 * COIN;
-
-    if (nHeight >= 69001 && nHeight <= 99999)
-        nSubsidy = 1000000 * COIN;
-
-    if (nHeight >= 100000 && nHeight <= 199999)
-        nSubsidy = 500000 * COIN;
-
-    if (nHeight >= 200000 && nHeight <= 299999)
-        nSubsidy = 250000 * COIN;
-
-    if (nHeight >= 300000 && nHeight <= 399999)
-        nSubsidy = 125000 * COIN;
-
-    if (nHeight >= 400000 && nHeight <= 419999)
-        nSubsidy = 62500 * COIN;
-
-    if (nHeight == 420000)
-        nSubsidy = 4200000 * COIN;
-
-    if (nHeight >= 420001 && nHeight <= 499999)
-        nSubsidy = 31250 * COIN;
-
-    if (nHeight >= 500000 && nHeight <= 599999)
-        nSubsidy = 15625 * COIN;
+    if (nHeight == 420000) {
+        nSubsidy = 42000000 * COIN;
+        return nSubsidy;
+    }
 
     nSubsidy >>= halvings;
     return nSubsidy;
 }
+
 
 bool IsInitialBlockDownload()
 {
