@@ -197,10 +197,10 @@ public:
         // By default assume that the signatures in ancestors of this block are valid.
         consensus.defaultAssumeValid = uint256S("0xa0afbded94d4be233e191525dc2d467af5c7eab3143c852c3cd549831022aad6"); //343833
 
-        pchMessageStart[0] = 0xfd;
-        pchMessageStart[1] = 0xd2;
-        pchMessageStart[2] = 0xc8;
-        pchMessageStart[3] = 0xf1;
+        pchMessageStart[0] = 0xdf;
+        pchMessageStart[1] = 0xf1;
+        pchMessageStart[2] = 0xff;
+        pchMessageStart[3] = 0xf2;
         nDefaultPort = 19335;
         nPruneAfterHeight = 160000;
 
